@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pendaftaran Mahasiswa Baru</title>
+  <link rel="stylesheet" href="css">
+</head>
+<body>
+  <div class="container">
+    <h2>Form Pendaftaran Mahasiswa Baru</h2>
+
+    <form id="formPendaftaran" onsubmit="return kirimData()">
+      
+      <!-- DATA PRIBADI -->
+      <div class="section-title">🧍 Data Pribadi</div>
+
+      <label for="nama">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" required>
+
+      <label for="nik">NIK:</label>
+      <input type="text" id="nik" name="nik" required>
+
+      <label for="tempat">Tempat Lahir:</label>
+      <input type="text" id="tempat" name="tempat">
+
+      <label for="tanggal">Tanggal Lahir:</label>
+      <input type="date" id="tanggal" name="tanggal">
+
+      <label for="kelamin">Jenis Kelamin:</label>
+      <select id="kelamin" name="kelamin" required>
+        <option value="">-- Pilih Jenis Kelamin --</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+
+      <label for="agama">Agama:</label>
+      <select id="agama" name="agama">
+        <option value="">-- Pilih Agama --</option>
+        <option value="Islam">Islam</option>
+        <option value="Kristen">Kristen</option>
+        <option value="Katolik">Katolik</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Buddha">Buddha</option>
+        <option value="Konghucu">Konghucu</option>
+      </select>
+
+      <label for="kewarganegaraan">Kewarganegaraan:</label>
+      <input type="text" id="kewarganegaraan" name="kewarganegaraan" value="Indonesia">
+
+      <label for="alamat">Alamat Lengkap:</label>
+      <textarea id="alamat" name="alamat" rows="3"></textarea>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telp">Nomor Telepon:</label>
+      <input type="tel" id="telp" name="telp" required>
+
+
+      <!-- DATA PENDIDIKAN -->
+      <div class="section-title">🎓 Data Pendidikan</div>
+
+      <label for="asal">Asal Sekolah:</label>
+      <input type="text" id="asal" name="asal">
+
+      <label for="alamatSekolah">Alamat Sekolah:</label>
+      <input type="text" id="alamatSekolah" name="alamatSekolah">
+
+      <label for="kodepos">Kode Pos Sekolah:</label>
+      <input type="text" id="kodepos" name="kodepos">
+
+      <label for="tahunLulus">Tahun Lulus:</label>
+      <select id="tahunLulus" name="tahunLulus" required>
+        <option value="">-- Pilih Tahun --</option>
+      </select>
+
+      <label for="studi">Program Studi yang Diambil:</label>
+      <select id="studi" name="studi" required>
+        <option value="">-- Pilih Jenjang --</option>
+        <option value="S1">S1</option>
+        <option value="D3">D3</option>
+        <option value="S2">S2</option>
+      </select>
+
+      <label for="jurusan">Jurusan yang Diambil:</label>
+      <select id="jurusan" name="jurusan" required>
+        <option value="">-- Pilih Jurusan --</option>
+        <option value="Teknik Informatika">Teknik Informatika</option>
+        <option value="Sistem Informasi">Sistem Informasi</option>
+        <option value="Manajemen">Manajemen</option>
+        <option value="Akuntansi">Akuntansi</option>
+        <option value="Hukum">Hukum</option>
+      </select>
+
+
+      <!-- DATA ORANG TUA -->
+      <div class="section-title">👨‍👩‍👦 Data Orang Tua / Wali</div>
+
+      <label for="ayah">Nama Ayah:</label>
+      <input type="text" id="ayah" name="ayah">
+
+      <label for="pekerjaanAyah">Pekerjaan Ayah:</label>
+      <input type="text" id="pekerjaanAyah" name="pekerjaanAyah">
+
+      <label for="ibu">Nama Ibu:</label>
+      <input type="text" id="ibu" name="ibu">
+
+      <label for="pekerjaanIbu">Pekerjaan Ibu:</label>
+      <input type="text" id="pekerjaanIbu" name="pekerjaanIbu">
+
+      <label for="noOrtu">Nomor HP Orang Tua / Wali:</label>
+      <input type="tel" id="noOrtu" name="noOrtu">
+
+      <label for="alamatOrtu">Alamat Orang Tua:</label>
+      <textarea id="alamatOrtu" name="alamatOrtu" rows="3"></textarea>
+
+
+      <!-- DATA TAMBAHAN -->
+      <div class="section-title">📝 Data Tambahan</div>
+
+      <label for="jalur">Jalur Pendaftaran:</label>
+      <select id="jalur" name="jalur" required>
+        <option value="">-- Pilih Jalur --</option>
+        <option value="Reguler">Reguler</option>
+        <option value="Beasiswa">Beasiswa</option>
+        <option value="Pindahan">Pindahan</option>
+      </select>
+
+      <label for="alasan">Alasan Memilih Jurusan Ini:</label>
+      <textarea id="alasan" name="alasan" rows="3"></textarea>
+
+      <label for="harapan">Harapan Setelah Lulus:</label>
+      <textarea id="harapan" name="harapan" rows="3"></textarea>
+
+
+      <!-- DOKUMEN -->
+      <div class="section-title">📁 Dokumen Pendukung</div>
+
+      <label for="ijazah">Upload Ijazah (jpg/png/pdf):</label>
+      <input type="file" id="ijazah" name="ijazah" accept=".jpg,.png,.pdf">
+
+      <label for="foto">Upload Pas Foto:</label>
+      <input type="file" id="foto" name="foto" accept=".jpg,.png">
+
+      <label for="dokumenLain">Dokumen Pendukung Lain:</label>
+      <input type="file" id="dokumenLain" name="dokumenLain" accept=".jpg,.png,.pdf">
+
+      <button type="submit">Kirim Pendaftaran</button>
+    </form>
+  </div>
+
+  <script src="java"></script>
+</body>
+</html>
