@@ -10,143 +10,162 @@
   <div class="container">
     <h2>Form Pendaftaran Mahasiswa Baru</h2>
 
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress" id="progress"></div>
+      <div class="circle active">1</div>
+      <div class="circle">2</div>
+      <div class="circle">3</div>
+      <div class="circle">4</div>
+      <div class="circle">5</div>
+    </div>
+
     <form id="formPendaftaran" onsubmit="return kirimData()">
-      
-      <!-- DATA PRIBADI -->
-      <div class="section-title">🧍 Data Pribadi</div>
 
-      <label for="nama">Nama Lengkap:</label>
-      <input type="text" id="nama" name="nama" required>
+      <!-- STEP 1: DATA PRIBADI -->
+      <div class="form-step active">
+        <div class="section-title">🧍 Data Pribadi</div>
 
-      <label for="nik">NIK:</label>
-      <input type="text" id="nik" name="nik" required>
+        <label>Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required>
 
-      <label for="tempat">Tempat Lahir:</label>
-      <input type="text" id="tempat" name="tempat">
+        <label>NIK:</label>
+        <input type="text" id="nik" name="nik" required>
 
-      <label for="tanggal">Tanggal Lahir:</label>
-      <input type="date" id="tanggal" name="tanggal">
+        <label>Tempat Lahir:</label>
+        <input type="text" id="tempat" name="tempat">
 
-      <label for="kelamin">Jenis Kelamin:</label>
-      <select id="kelamin" name="kelamin" required>
-        <option value="">-- Pilih Jenis Kelamin --</option>
-        <option value="Laki-laki">Laki-laki</option>
-        <option value="Perempuan">Perempuan</option>
-      </select>
+        <label>Tanggal Lahir:</label>
+        <input type="date" id="tanggal" name="tanggal">
 
-      <label for="agama">Agama:</label>
-      <select id="agama" name="agama">
-        <option value="">-- Pilih Agama --</option>
-        <option value="Islam">Islam</option>
-        <option value="Kristen">Kristen</option>
-        <option value="Katolik">Katolik</option>
-        <option value="Hindu">Hindu</option>
-        <option value="Buddha">Buddha</option>
-        <option value="Konghucu">Konghucu</option>
-      </select>
+        <label>Jenis Kelamin:</label>
+        <select id="kelamin" name="kelamin" required>
+          <option value="">-- Pilih --</option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
 
-      <label for="kewarganegaraan">Kewarganegaraan:</label>
-      <input type="text" id="kewarganegaraan" name="kewarganegaraan" value="Indonesia">
+        <label>Agama:</label>
+        <select id="agama" name="agama">
+          <option value="">-- Pilih Agama --</option>
+          <option>Islam</option>
+          <option>Kristen</option>
+          <option>Katolik</option>
+          <option>Hindu</option>
+          <option>Buddha</option>
+          <option>Konghucu</option>
+        </select>
 
-      <label for="alamat">Alamat Lengkap:</label>
-      <textarea id="alamat" name="alamat" rows="3"></textarea>
+        <button type="button" class="next-btn">Selanjutnya</button>
+      </div>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <!-- STEP 2: DATA PENDIDIKAN -->
+      <div class="form-step">
+        <div class="section-title">🎓 Data Pendidikan</div>
 
-      <label for="telp">Nomor Telepon:</label>
-      <input type="tel" id="telp" name="telp" required>
+        <label>Asal Sekolah:</label>
+        <input type="text" id="asal" name="asal">
 
+        <label>Alamat Sekolah:</label>
+        <input type="text" id="alamatSekolah" name="alamatSekolah">
 
-      <!-- DATA PENDIDIKAN -->
-      <div class="section-title">🎓 Data Pendidikan</div>
+        <label>Kode Pos Sekolah:</label>
+        <input type="text" id="kodepos" name="kodepos">
 
-      <label for="asal">Asal Sekolah:</label>
-      <input type="text" id="asal" name="asal">
+        <label>Tahun Lulus:</label>
+        <select id="tahunLulus" name="tahunLulus" required></select>
 
-      <label for="alamatSekolah">Alamat Sekolah:</label>
-      <input type="text" id="alamatSekolah" name="alamatSekolah">
+        <label>Program Studi:</label>
+        <select id="studi" name="studi" required>
+          <option value="">-- Pilih Jenjang --</option>
+          <option>S1</option>
+          <option>D3</option>
+          <option>S2</option>
+        </select>
 
-      <label for="kodepos">Kode Pos Sekolah:</label>
-      <input type="text" id="kodepos" name="kodepos">
+        <label>Jurusan:</label>
+        <select id="jurusan" name="jurusan" required>
+          <option value="">-- Pilih Jurusan --</option>
+          <option>Teknik Informatika</option>
+          <option>Sistem Informasi</option>
+          <option>Manajemen</option>
+          <option>Akuntansi</option>
+          <option>Hukum</option>
+        </select>
 
-      <label for="tahunLulus">Tahun Lulus:</label>
-      <select id="tahunLulus" name="tahunLulus" required>
-        <option value="">-- Pilih Tahun --</option>
-      </select>
+        <div class="btns">
+          <button type="button" class="prev-btn">Sebelumnya</button>
+          <button type="button" class="next-btn">Selanjutnya</button>
+        </div>
+      </div>
 
-      <label for="studi">Program Studi yang Diambil:</label>
-      <select id="studi" name="studi" required>
-        <option value="">-- Pilih Jenjang --</option>
-        <option value="S1">S1</option>
-        <option value="D3">D3</option>
-        <option value="S2">S2</option>
-      </select>
+      <!-- STEP 3: DATA ORANG TUA -->
+      <div class="form-step">
+        <div class="section-title">👨‍👩‍👦 Data Orang Tua / Wali</div>
 
-      <label for="jurusan">Jurusan yang Diambil:</label>
-      <select id="jurusan" name="jurusan" required>
-        <option value="">-- Pilih Jurusan --</option>
-        <option value="Teknik Informatika">Teknik Informatika</option>
-        <option value="Sistem Informasi">Sistem Informasi</option>
-        <option value="Manajemen">Manajemen</option>
-        <option value="Akuntansi">Akuntansi</option>
-        <option value="Hukum">Hukum</option>
-      </select>
+        <label>Nama Ayah:</label>
+        <input type="text" id="ayah" name="ayah">
 
+        <label>Pekerjaan Ayah:</label>
+        <input type="text" id="pekerjaanAyah" name="pekerjaanAyah">
 
-      <!-- DATA ORANG TUA -->
-      <div class="section-title">👨‍👩‍👦 Data Orang Tua / Wali</div>
+        <label>Nama Ibu:</label>
+        <input type="text" id="ibu" name="ibu">
 
-      <label for="ayah">Nama Ayah:</label>
-      <input type="text" id="ayah" name="ayah">
+        <label>Pekerjaan Ibu:</label>
+        <input type="text" id="pekerjaanIbu" name="pekerjaanIbu">
 
-      <label for="pekerjaanAyah">Pekerjaan Ayah:</label>
-      <input type="text" id="pekerjaanAyah" name="pekerjaanAyah">
+        <label>Nomor HP Orang Tua:</label>
+        <input type="tel" id="noOrtu" name="noOrtu">
 
-      <label for="ibu">Nama Ibu:</label>
-      <input type="text" id="ibu" name="ibu">
+        <div class="btns">
+          <button type="button" class="prev-btn">Sebelumnya</button>
+          <button type="button" class="next-btn">Selanjutnya</button>
+        </div>
+      </div>
 
-      <label for="pekerjaanIbu">Pekerjaan Ibu:</label>
-      <input type="text" id="pekerjaanIbu" name="pekerjaanIbu">
+      <!-- STEP 4: DATA TAMBAHAN -->
+      <div class="form-step">
+        <div class="section-title">📝 Data Tambahan</div>
 
-      <label for="noOrtu">Nomor HP Orang Tua / Wali:</label>
-      <input type="tel" id="noOrtu" name="noOrtu">
+        <label>Jalur Pendaftaran:</label>
+        <select id="jalur" name="jalur" required>
+          <option value="">-- Pilih --</option>
+          <option>Reguler</option>
+          <option>Beasiswa</option>
+          <option>Pindahan</option>
+        </select>
 
-      <label for="alamatOrtu">Alamat Orang Tua:</label>
-      <textarea id="alamatOrtu" name="alamatOrtu" rows="3"></textarea>
+        <label>Alasan Memilih Jurusan:</label>
+        <textarea id="alasan" name="alasan" rows="3"></textarea>
 
+        <label>Harapan Setelah Lulus:</label>
+        <textarea id="harapan" name="harapan" rows="3"></textarea>
 
-      <!-- DATA TAMBAHAN -->
-      <div class="section-title">📝 Data Tambahan</div>
+        <div class="btns">
+          <button type="button" class="prev-btn">Sebelumnya</button>
+          <button type="button" class="next-btn">Selanjutnya</button>
+        </div>
+      </div>
 
-      <label for="jalur">Jalur Pendaftaran:</label>
-      <select id="jalur" name="jalur" required>
-        <option value="">-- Pilih Jalur --</option>
-        <option value="Reguler">Reguler</option>
-        <option value="Beasiswa">Beasiswa</option>
-        <option value="Pindahan">Pindahan</option>
-      </select>
+      <!-- STEP 5: DOKUMEN -->
+      <div class="form-step">
+        <div class="section-title">📁 Dokumen Pendukung</div>
 
-      <label for="alasan">Alasan Memilih Jurusan Ini:</label>
-      <textarea id="alasan" name="alasan" rows="3"></textarea>
+        <label>Upload Ijazah:</label>
+        <input type="file" id="ijazah" name="ijazah" accept=".jpg,.png,.pdf">
 
-      <label for="harapan">Harapan Setelah Lulus:</label>
-      <textarea id="harapan" name="harapan" rows="3"></textarea>
+        <label>Upload Pas Foto:</label>
+        <input type="file" id="foto" name="foto" accept=".jpg,.png">
 
+        <label>Dokumen Pendukung Lain:</label>
+        <input type="file" id="dokumenLain" name="dokumenLain" accept=".jpg,.png,.pdf">
 
-      <!-- DOKUMEN -->
-      <div class="section-title">📁 Dokumen Pendukung</div>
-
-      <label for="ijazah">Upload Ijazah (jpg/png/pdf):</label>
-      <input type="file" id="ijazah" name="ijazah" accept=".jpg,.png,.pdf">
-
-      <label for="foto">Upload Pas Foto:</label>
-      <input type="file" id="foto" name="foto" accept=".jpg,.png">
-
-      <label for="dokumenLain">Dokumen Pendukung Lain:</label>
-      <input type="file" id="dokumenLain" name="dokumenLain" accept=".jpg,.png,.pdf">
-
-      <button type="submit">Kirim Pendaftaran</button>
+        <div class="btns">
+          <button type="button" class="prev-btn">Sebelumnya</button>
+          <button type="submit">Kirim Pendaftaran</button>
+        </div>
+      </div>
     </form>
   </div>
 
